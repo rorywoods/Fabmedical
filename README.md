@@ -16,3 +16,5 @@ These instructions use the content-init script to load the Cosmos DB database in
    cd ~/Fabmedical/content-init
    nodejs server.js
    ```
+1. Use the Cosmos DB Data Explorer to verify the collections and documents were created
+   ![image](https://user-images.githubusercontent.com/987114/145730681-c887bd6d-0219-4d26-a126-496c857eaf37.png)
