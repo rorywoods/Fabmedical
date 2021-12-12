@@ -4,10 +4,14 @@ These instructions use the content-init script to load the Cosmos DB database in
 
 1. In the Azure Portal, navigate to your Cosmos DB resource
 ![image](https://user-images.githubusercontent.com/987114/145730399-4a724041-9fcb-4975-b13f-374629cedfc1.png)
-1. Select `Connection String` under `Settings`  
+1. Open the `Quick Start` blade and the Node.js tab  
 1. Copy the Primary Connection String to your clipboard  
-![image](https://user-images.githubusercontent.com/987114/145730459-69bc5244-6357-43ac-a4ee-492cbb77bf4c.png)
-1. Create a `MONGODB_CONNECTION` environment variable with this value on your Build VM. Surround the connection string with quotes.
+![image](https://user-images.githubusercontent.com/987114/145732330-737b4c20-6872-4774-b75a-040a62bf939b.png)
+1. Modify the copied connection string by adding the database `contentdb` to the URL, and three querystring parameters `ssl=true&replicaSet=globaldb&retrywrites=false`. The resulting connection string should look like the below sample. Note that you may need to modify the endpoint URL.
+   ```
+   mongodb://<USERNAME>:<PASSWORD>@fabmedical-<SUFFIX>.mongo.cosmos.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb&retrywrites=false
+   ```
+3. Create a `MONGODB_CONNECTION` environment variable with this value on your Build VM. Surround the connection string with quotes.
    ```bash
    export MONGODB_CONNECTION="<connection_string>"
    ```
