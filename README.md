@@ -1,4 +1,4 @@
-# Fabmedical Exercise 2 Alternative
+# Fabmedical Exercise 1 Alternative
 These instructions use the content-init script to load the Cosmos DB database instead of migrating.
 
 
