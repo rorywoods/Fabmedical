@@ -7,9 +7,9 @@ These instructions use the content-init script to load the Cosmos DB database in
 1. Open the `Quick Start` blade and the Node.js tab  
 1. Copy the Primary Connection String to your clipboard  
 ![image](https://user-images.githubusercontent.com/987114/145732330-737b4c20-6872-4774-b75a-040a62bf939b.png)
-1. Modify the copied connection string by adding the database `contentdb` to the URL, and three querystring parameters `ssl=true&replicaSet=globaldb&retrywrites=false`. The resulting connection string should look like the below sample. Note that you may need to modify the endpoint URL.
+1. Modify the copied connection string by adding the database `contentdb` to the URL (after the `10255/`), and the querystring parameter `replicaSet=globaldb`. The resulting connection string should look like the below sample. 
    ```
-   mongodb://<USERNAME>:<PASSWORD>@fabmedical-<SUFFIX>.mongo.cosmos.azure.com:10255/contentdb?ssl=true&replicaSet=globaldb&retrywrites=false
+   mongodb://<USERNAME>:<PASSWORD>@fabmedical-<SUFFIX>.mongo.cosmos.azure.com:10255/contentdb?replicaSet=globaldb&ssl=true&retrywrites=false...
    ```
 3. Create a `MONGODB_CONNECTION` environment variable with this value on your Build VM. Surround the connection string with quotes.
    ```bash
@@ -18,6 +18,7 @@ These instructions use the content-init script to load the Cosmos DB database in
 1. Run the init script
    ```bash
    cd ~/Fabmedical/content-init
+   npm install
    nodejs server.js
    ```
 1. Use the Cosmos DB Data Explorer to verify the collections and documents were created
