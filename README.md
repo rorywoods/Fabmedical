@@ -11,7 +11,7 @@ These instructions use the content-init script to load the Cosmos DB database in
    ```
    mongodb://<USERNAME>:<PASSWORD>@fabmedical-<SUFFIX>.mongo.cosmos.azure.com:10255/contentdb?replicaSet=globaldb&ssl=true&retrywrites=false...
    ```
-3. Create a `MONGODB_CONNECTION` environment variable with this value on your Build VM. Surround the connection string with quotes.
+3. On the Build Agent VM in your Cloud Shell session, create a `MONGODB_CONNECTION` environment variable with this value. Surround the connection string with quotes.
    ```bash
    export MONGODB_CONNECTION="<connection_string>"
    ```
